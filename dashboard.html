@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--Meta tags-->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--Title-->
+    <title>Dashboard</title>
+
+    <!--Fonts and stylesheets-->
+    <link href="http://fonts.cdnfonts.com/css/hanken-grotesk" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="http://fonts.cdnfonts.com/css/circular-std-book" rel="stylesheet">
+                
+    <link rel="stylesheet" href="CSS/dashboard.css">
+</head>
+<body>
+    <!--Global HTML-->
+
+    <!--end of Global HTML-->
+
+    <!--Page-dependent HTML-->
+    <div class="contentouterwrap">
+
+        <div class="topwrap">
+            <div class="clientTime">
+                <div class="clientHourMinute"></div>
+                <div class="ampmCircle"></div>
+            </div>
+
+            <div class="dashboardSelect"></div>
+
+            <div></div>
+
+            <div class="tools">
+                <img class="settings" src="icons/ic_settings_24px.svg"></img>
+                <img class="help" src="icons/ic_help_outline_24px.svg"></img>
+            </div>
+        </div>
+
+        <div class="widgetswrap">
+            <div class="widget simpleweather">
+
+            </div>
+
+            <div class="addWidget"></div>
+        </div>
+
+        <div class="contentinnerwrap">
+
+            <!--Client Tasks-->
+            <div class="contentcard tasks normal">
+
+                <div class="contentTitle">Tasks</div>
+                <div class="sortOptions">
+                    <div class="option">Recent</div>
+                    <div class="option">Due soon</div>
+                </div>
+
+                <div class="taskListWrap">
+                    <div class="taskList">
+
+                        <div class="task taskNormal">
+                            <div class="taskTitle">Get new skis</div>
+                            <div class="taskDue">Mar 1</div>
+
+                            <div class="taskSelect"></div>
+                        </div>
+                        <div class="task taskNormal"></div>
+
+                    </div>
+                </div>
+
+                <div class="scroll"></div>
+                <div class="taskTools"></div>
+
+            </div>
+
+
+
+            <!--Trello Board-->
+            <div class="contentcard trello normal">
+                <div style="color: #3E5371;" class="contentTitle">Trello</div>
+
+                <iframe class="trelloInt" src="https://trello.com/b/mXA90LHZ.html" frameborder="0"></iframe>
+            </div>
+
+
+            <!--Client Mail-->
+            <div class="contentcard mail normal">
+                <div class="contentTitle">Mail</div>
+
+                <button id="authorize_button" style="display: none;">Authorize</button>
+                <button id="signout_button" style="display: none;">Sign Out</button>
+
+                <div class="emailListWrap">
+                    <div class="emailList">
+
+                    </div>
+                </div>
+
+            </div>
+
+            <!--Client News-->
+            <div class="contentcard news normal">
+                <div class="contentTitle">News</div>
+                <div class="sortOptions">
+                    <div style="color: #4D6F61;" class="option">Top stories</div>
+                </div>
+
+                <div class="newsListWrap">
+                    <div class="newsList">
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+</body>
+    <!--Gmail API-->
+    <script src="JS/mail.js"></script>
+    <script
+    async
+    defer
+    src="https://apis.google.com/js/api.js"
+    onload="this.onload=function(){};handleClientLoad()"
+    onreadystatechange="if (this.readyState === 'complete') this.onload()"
+  ></script>
+
+    <!--CDN Scripts-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <!--Scripts-->
+    <script src="JS/dashboard.js"></script>
+    <script src="JS/news.js"></script>
+</html>
