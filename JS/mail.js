@@ -122,7 +122,7 @@ function listLabels() {
              })
              .then(function(response) {
                  // Handle the results here (response.result has the parsed body).
-                 console.log("Email", response);
+                 //console.log("Email", response);
 
                   // Assign variables to respective API endpoints
                  var id = response.result.id;
@@ -154,7 +154,7 @@ function listLabels() {
                   card.appendChild(cardDesc)
           
                   emailList.appendChild(card)
-                  console.log(emailList)
+                  //console.log(emailList)
               
                   for (var cardNum = 0; cardNum < emailCards.length; cardNum ++) {
                     (function (cardNum) {
@@ -174,3 +174,9 @@ function listLabels() {
 
 
 }
+
+
+setTimeout(function() {
+  handleClientLoad();
+  console.log('noWow')
+}, 1000)
