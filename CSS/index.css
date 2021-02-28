@@ -1,0 +1,94 @@
+body {
+    background: white;
+}
+.center {
+    left: 50%; 
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+/* 
+Font specification:
+
+font-family: 'Circular Std Book', sans-serif;
+font-family: 'Circular Std Medium', sans-serif;
+font-family: 'Inter', sans-serif;
+*/
+
+.illuswrap {
+    display: grid; place-items: center;
+    height: auto;
+    width: min-content;
+}
+.illuswrap:nth-child(1) {
+    position: absolute;
+    top: 50px;
+    left: 5%;
+}
+.illuswrap:nth-child(2) {
+    position: absolute;
+    top: 50px;
+    right: 5%;
+}
+.illuswrap:nth-child(3) {
+    position: absolute;
+    bottom: 50px;
+    left: 5%;
+}
+.illuswrap:nth-child(4) {
+    position: absolute;
+    bottom: 50px;
+    right: 5%;
+}
+
+.textcontent {
+    position: absolute;
+
+    font-family: 'Inter', sans-serif;
+
+    width: 70%; min-width: 660px;
+    height: 280px;
+}
+.work {
+    text-align: center;
+
+    font-weight: 600;
+    font-size: 60px;
+
+    color: #213E71;
+}
+.help {
+    text-align: center;
+    line-height: 34px;
+
+    font-weight: 400;
+    font-size: 20px;
+
+    color: #5974A2;
+
+    width: 70%; max-width: 500px;
+
+    position: relative;
+    left: 50%; transform: translateX(-50%);
+}
+.help span {
+    color: #273958;
+    font-weight: 500;
+}
+.buttonstart {
+    position: absolute;
+    left: 50%; 
+    bottom: 0;
+    transform: translateX(-50%);
+
+    background-color: #6B7F96;
+    border-radius: 12px;
+
+    width: 160px;
+    height: 50px;
+
+    display: grid;
+    place-items: center;
+
+    color: white;
+    cursor: pointer;
+}
