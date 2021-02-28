@@ -175,9 +175,3 @@ function listLabels() {
 
 
 }
-
-
-setTimeout(function() {
-  handleClientLoad();
-  console.log('noWow')
-}, 1000)
