@@ -95,10 +95,61 @@ font-family: 'Inter', sans-serif;
 }
 .simpleweather {
     width: 100%;
-    height: 317px;
+    height: 287px;
 }
-#smplweather {
-    border-radius: 20px;
+.currentWeather {
+    height: calc(100% - 40px);
+    width: calc(100% - 40px);
+    margin: 20px;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(7, 1fr);
+
+    grid-template-areas:
+     'temp temp' 
+     'temp temp' 
+     'temp temp'
+     'feels feelsTemp'
+     'wind windSpeed'
+     'humid humidPercent'
+     'rain rainChance'
+    ;
+
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.largetempdisplay {
+    grid-area: temp;
+    margin: auto;
+
+    font-size: 50px;
+    font-weight: 600;
+    color: #505050;
+}
+.weatherStatLabel {
+    margin: auto 10px auto auto;
+    color: #808080;
+    font-weight: 400;
+}
+.weatherStat{
+    margin: auto auto auto 10px;
+    font-weight: 500;
+}
+.feelsTemp {
+    color: #363636;
+    grid-area: feelsTemp;
+}
+.windSpeed {
+    color: #546565;
+    grid-area: windSpeed;
+}
+.humidity {
+    color: #84745A;
+    grid-area: humidPercent;
+}
+.rainChance {
+    color: #588591;
+    grid-area: rainChance;
 }
 .addWidget {
     margin: 40px auto auto auto;
@@ -131,6 +182,29 @@ font-family: 'Inter', sans-serif;
     flex-shrink: 1;
 }
 
+/* SCROLLBAR AND DIRECTION GLOBALS */
+
+.emailListWrap::-webkit-scrollbar, .newsListWrap::-webkit-scrollbar, .taskListWrap::-webkit-scrollbar  {
+    width: 8px;
+    height: 100px;
+}
+.emailListWrap::-webkit-scrollbar-track, .newsListWrap::-webkit-scrollbar-track, .taskListWrap::-webkit-scrollbar-track {
+    background: #f1f1f100;
+}
+.emailListWrap::-webkit-scrollbar-thumb, .newsListWrap::-webkit-scrollbar-thumb, .taskListWrap::-webkit-scrollbar-thumb {
+    background: #6f6f6f;
+    border-radius: 20px;
+}
+.emailListWrap::-webkit-scrollbar-thumb:hover, .newsListWrap::-webkit-scrollbar-thumb:hover, .taskListWrap::-webkit-scrollbar-thumb:hover  {
+    background: #555;
+}
+.emailList, .newsList, .taskList {
+    margin: 0 0 0 15px;
+    direction: ltr;
+}
+.emailListWrap, .newsListWrap, .taskListWrap {
+    direction: rtl;
+}
 
 
 /* TASKS*/
@@ -170,14 +244,42 @@ font-family: 'Inter', sans-serif;
     height: 500px;
     flex-grow: 1;
     flex-basis: 450px;
+    transform: translateZ(0);
 }
 .taskListWrap {
+    position: relative;
     height: 100%;
     overflow-x: hidden;
     overflow-y: auto;
 }
+.taskTools {
+    position: fixed;
+    top: 100px;
+    right: 0;
+
+    border: 1px solid #DEDEDE;
+    border-radius: 18px;
+
+    height: 208px;
+    width: 50px;
+
+    display: grid;
+    place-items: center;
+
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 1fr);
+}
+.taskTools img {
+    cursor: pointer;
+}
+.taskTools img:not(:nth-child(2)) {
+    width: 16px;
+}
+.taskTools img:nth-child(2) {
+    width: 20px;
+}
 .taskList {
-    margin: 0 20px 0 0;
+    margin: 0  90px 0 15px;
     height: min-content;
 
     display: grid;
@@ -187,8 +289,8 @@ font-family: 'Inter', sans-serif;
 }
 .taskNormal {
     border: 1px solid #DEDEDE;
-    border-radius: 20px;
-    height: 61px;
+    border-radius: 19px;
+    height: 60px;
 
     display: grid;
     grid-template-columns: 1fr 70px 60px;
@@ -209,6 +311,14 @@ font-family: 'Inter', sans-serif;
 
     font-weight: 500;
     font-size: 17px;
+}
+.taskSelect {
+    display: grid; place-items: center;
+    position: relative;
+    user-select: none;
+}
+/* Hide the browser's default checkbox */
+.taskSelect input {
 }
 /* END TASKS*/
 
@@ -244,7 +354,7 @@ font-family: 'Inter', sans-serif;
     grid-area: 1/1/1/2;
 
     margin: 15px auto auto;
-    margin-right: 40px;
+    margin-right: 0px;
 
     width: 100px;
     height: 30px;
@@ -261,7 +371,6 @@ font-family: 'Inter', sans-serif;
     overflow-y: auto;
 }
 .emailList {
-    margin: 0 20px 0 0;
     height: min-content;
 
     display: grid;
@@ -337,7 +446,6 @@ font-family: 'Inter', sans-serif;
     overflow-y: auto;
 }
 .newsList {
-    margin: 0 20px 0 0;
     height: min-content;
 
     display: grid;
@@ -395,3 +503,33 @@ font-family: 'Inter', sans-serif;
     font-weight: 500;
 }
 /* END NEWS*/
+
+/*
+@media (prefers-color-scheme:dark) {
+    body {
+        background: #1d1d1d;
+    }
+    .emailNormal, .newsNormal{
+        direction:ltr;
+        background-color: #272727;
+        border: 1px solid #000000;
+    }
+    .emailNormal:hover, .newsNormal:hover{
+        background-color: rgb(49, 49, 49);
+    }
+    .emailSnippet, .newsAbstract {
+        color: #616161;
+    }
+    .emailTitle, .newsTitle {
+        color: #9c9c9c;
+    }
+    .contentTitle, .clientHourMinute {
+        color: #bfbfbf;
+    }
+    #authorize_button, #signout_button {
+        background-color: rgb(53 53 53);
+        border: 1px solid #0e0e0e;
+        color: #bdbdbd;
+    }
+}
+*?

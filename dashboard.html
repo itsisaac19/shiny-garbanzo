@@ -43,7 +43,21 @@
 
         <div class="widgetswrap">
             <div class="widget simpleweather">
+                <div class="currentWeather">
+                    <div class="largetempdisplay"></div>
 
+                    <div class="feels weatherStatLabel">Feels</div>
+                    <div class="feelsTemp weatherStat"></div>
+
+                    <div class="wind weatherStatLabel">Wind</div>
+                    <div class="windSpeed weatherStat"></div>
+
+                    <div class="humid weatherStatLabel">Humidity</div>
+                    <div class="humidity weatherStat"></div>
+
+                    <div class="rain weatherStatLabel">Rain</div>
+                    <div class="rainChance weatherStat"></div>
+                </div>
             </div>
 
             <div class="addWidget"></div>
@@ -67,15 +81,27 @@
                             <div class="taskTitle">Get new skis</div>
                             <div class="taskDue">Mar 1</div>
 
-                            <div class="taskSelect"></div>
+                            <div class="taskSelect">
+                                <input type="checkbox">
+                            </div>
                         </div>
+                        <div class="task taskNormal"></div>
+                        <div class="task taskNormal"></div>
+                        <div class="task taskNormal"></div>
+                        <div class="task taskNormal"></div>
+                        <div class="task taskNormal"></div>
                         <div class="task taskNormal"></div>
 
                     </div>
+                    <div class="taskTools">
+                        <img src="icons/ic_create_24px.svg" alt="">
+                        <img src="icons/ic_done_all_24px.svg" alt="">
+                        <img src="icons/ic_delete_24px.svg" alt="">
+                        <img src="icons/ic_info_outline_24px.svg" alt="">
+                    </div>
                 </div>
 
-                <div class="scroll"></div>
-                <div class="taskTools"></div>
+
 
             </div>
 
@@ -135,4 +161,5 @@
     <!--Scripts-->
     <script src="JS/dashboard.js"></script>
     <script src="JS/news.js"></script>
+    <script src="JS/weather.js"></script>
 </html>
