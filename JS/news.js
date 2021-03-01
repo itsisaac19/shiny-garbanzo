@@ -1,7 +1,7 @@
 fetch("https://api.nytimes.com/svc/topstories/v2/home.json?api-key=BPJ4P2wkOHJzUtnWnRYBmaKAwh568sHU")
 .then((response) => response.json())
 .then((data) => {
-    console.log(data);
+   // console.log(data);
 
     var newsList = document.querySelector('.newsList'); newsList.innerHTML = '';
     var newsCards = document.getElementsByClassName('newsCard');
